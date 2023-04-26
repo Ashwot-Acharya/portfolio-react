@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light{
+    background-color: antiquewhite;
+  }
+.dark{
+    background-color: rgb(47, 47, 47);
+    color: white;
+  }
