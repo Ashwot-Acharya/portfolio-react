@@ -15,13 +15,27 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     const theme =  useSelector((state)=>state.page.mode)
     const [pagemode , setpagemode] = useState(true)
-    
+    const myPagetheme = localStorage.getItem('pagetheme')
+    console.log(myPagetheme)
     const dispatch = useDispatch()
+
     useEffect(() => {
         document.body.className = theme;
+        if (myPagetheme ==  "light"){
+        
+            dispatch(switchmode("dark"))
+            setpagemode(false)         
+            
+            }
+        else if (myPagetheme == 'dark'){ 
+                dispatch(switchmode('light'))
+                setpagemode(true)
+                
+        }
+      
         }, [theme]);
 
-    
+ 
     function changemode(){
         console.log(theme)
         
@@ -30,15 +44,17 @@ function Navbar() {
 
             dispatch(switchmode("dark"))
             setpagemode(false)         
-            document.getElementsByClassName("light").n
-
+            document.getElementsByClassName("light")
+            localStorage.setItem('pagetheme', (theme));
+            
         }
         else{
             dispatch(switchmode('light'))
             setpagemode(true)
+            localStorage.setItem('pagetheme', (theme));
         }
 
-
+        
 
 
     }
@@ -46,13 +62,13 @@ function Navbar() {
   return (
     <div className={`navbar-style-basic ${theme}`} > 
         <div>
-            <h3 className='und text-3xl'> <Link to="/"> AA </Link></h3>
+            <h3 className='und text-3xl logo'> <Link to="/"> AA </Link></h3>
         </div>
-        <div className='flex'>
+        <div className='flex navlinks'>
             <div className='m-5  nav-links'>
                 <Link to='/projects' className='und o7'>projects</Link>  </div>
             <div className='m-5 nav-links'>
-                <Link to="/blog" className='und 07'>Blogs</Link> </div>
+                <Link to="/blog" className='und o7'>Blogs</Link> </div>
             <div className='m-5 nav-links'> <Link to="/demos" className='und'>
                     Demos
                 </Link> </div>
@@ -76,6 +92,41 @@ function Navbar() {
                     }
                 </button>  
 
+            </div>
+            <div className='mobile-view'>
+            <nav class="navbar">
+            <div class="navbar-container container">
+                <input type="checkbox" name="" id=""/>
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class={`menu-items  ${theme}`}>
+                    <li>
+                        <Link to='/blog' className='' > Blogs </Link>
+                    </li>
+                    <li>
+                        <Link to='/projects' className='' > Projects </Link>
+                    </li>
+                    <li>
+                        <Link to='/demo' className='' > Demo </Link>
+                    </li>
+                    <li>
+                        <Link to='/' > <TwitterIcon/> </Link>
+                    </li>
+                    <li><a href=""><GitHubIcon/></a></li>
+                    <li><a href=""><FavoriteBorderIcon/></a></li>
+                    <li> 
+                    <button className=' o7 light-mode '  onClick={changemode}>
+                    {
+                        pagemode ? <LightModeIcon/> : <DarkModeIcon/> 
+                    }
+                </button> 
+                    </li>
+                </ul>
+            </div> 
+        </nav>
             </div>
 
         </div>
