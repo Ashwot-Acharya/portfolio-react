@@ -94,15 +94,15 @@ function Navbar() {
 
             </div>
             <div className='mobile-view'>
-            <nav class="navbar">
-            <div class="navbar-container container">
+            <nav className="navbar">
+            <div className="navbar-container container">
                 <input type="checkbox" name="" id=""/>
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
+                <div className="hamburger-lines">
+                    <span className="line line1"></span>
+                    <span className="line line2"></span>
+                    <span className="line line3"></span>
                 </div>
-                <ul class={`menu-items  ${theme}`}>
+                <ul className={`menu-items  ${theme}`}>
                     <li>
                         <Link to='/blog' className='' > Blogs </Link>
                     </li>

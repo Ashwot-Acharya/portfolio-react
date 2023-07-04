@@ -221,3 +221,7 @@ display: none;
                 /* End Of Hamburger Styling */
 
 }
+.swiper {
+  width: 600px;
+  height: 300px;
+}
