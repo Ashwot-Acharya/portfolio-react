@@ -5,6 +5,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import TwitterIcon from '@mui/icons-material/Twitter';  
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+
+
 import { useSelector } from 'react-redux'; 
 import { useState } from 'react';
 import { switchmode } from '../state/pageslice';
@@ -12,11 +14,11 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Navbar() {
     const theme =  useSelector((state)=>state.page.mode)
     const [pagemode , setpagemode] = useState(true)
     const myPagetheme = localStorage.getItem('pagetheme')
-    console.log(myPagetheme)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -69,8 +71,8 @@ function Navbar() {
                 <Link to='/projects' className='und o7'>projects</Link>  </div>
             <div className='m-5 nav-links'>
                 <Link to="/blog" className='und o7'>Blogs</Link> </div>
-            <div className='m-5 nav-links'> <Link to="/demos" className='und'>
-                    Demos
+            <div className='m-5 nav-links'> <Link to="/gallery" className='und'>
+                    Gallery
                 </Link> </div>
             <div className='m-5 nav-links icon' > 
                <a href='#' className='und o7'> <TwitterIcon/> </a>
@@ -82,7 +84,7 @@ function Navbar() {
                 <a className='und o7' href="#"><InstagramIcon/></a>
             </div>
             <div className='m-5 nav-links icon'>
-               <a className='und o7' href="#"> <FavoriteBorderIcon/> </a>
+               <Link  className='und o7' to="#"> <FavoriteBorderIcon/> </Link>
             </div>
             <div className='m-5 navlinks icon'>
             
@@ -110,7 +112,7 @@ function Navbar() {
                         <Link to='/projects' className='' > Projects </Link>
                     </li>
                     <li>
-                        <Link to='/demo' className='' > Demo </Link>
+                        <Link to='/demos    ' className='' > Demo </Link>
                     </li>
                     <li>
                         <Link to='/' > <TwitterIcon/> </Link>

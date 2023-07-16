@@ -78,6 +78,10 @@
     width: 50%;
   }
 
+  .mb-3{
+    margin-bottom: 20px;
+  }
+
 .p_left-20{
   padding-left: 20%;
 
@@ -87,6 +91,10 @@ display: none;
 }
 .ml-view{
   display: none;
+}
+ 
+.text{
+  z-index: 2 ;
 }
 
 @media only screen and (max-width: 780px) {
@@ -225,3 +233,63 @@ display: none;
   width: 600px;
   height: 300px;
 }
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+
+.darkdot li::before{
+  content: "\2022";  
+  color: rgb(255, 255, 255);
+  display: inline-block; 
+  width: 1rem;
+  margin-left: -1em; 
+}
+.lightdot li::before{
+  content: "\2022";  
+  color: rgb(1, 10, 94);
+  display: inline-block; 
+  width: 1rem;
+  margin-left: -1em; 
+}
+.reduced-opacity{
+  opacity: 0.7;
+}
+a:hover{
+  color: rgb(255, 27, 152);
+}
+.particles{
+  z-index: -1;
+}
+.expand:hover{
+
+  transform: scale(1.5);
+  box-shadow: 0 0 10px rgba(88, 211, 16, 0.5);
+
+
+}
+.expand{
+  transition: transform .2s; /* Animation */
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px;
+  width: auto;
+  
+}
+.my-masonry-grid_column {
+  padding-left: 15px; /* gutter size */
+  background-clip: padding-box;
+}
+.image_gallery{
+  transition: 0.5s;
+  border-radius: 10px;
+}
+.image_gallery:hover{
+
+  box-shadow: 0 0 20px #ffffff;
+}
+
