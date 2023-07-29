@@ -75,16 +75,16 @@ function Navbar() {
                     Gallery
                 </Link> </div>
             <div className='m-5 nav-links icon' > 
-               <a href='#' className='und o7'> <TwitterIcon/> </a>
+               <a href='https://twitter.com/ashwotacharya' target='__blank' className='und o7'> <TwitterIcon/> </a>
             </div>
             <div className='m-5 nav-links icon'>
-               <a href="#" className='und o7'> <GitHubIcon/></a>
+               <a href="https://github.com/Ashwot-Acharya/" target='__blank' className='und o7'> <GitHubIcon/></a>
             </div>
             <div className='m-5 nav-links icon'>
-                <a className='und o7' href="#"><InstagramIcon/></a>
+                <a className='und o7' target='__blank' href="https://www.instagram.com/acharya_ashwot/"><InstagramIcon/></a>
             </div>
             <div className='m-5 nav-links icon'>
-               <Link  className='und o7' to="#"> <FavoriteBorderIcon/> </Link>
+               <Link  className='und o7' to="/contactme"> <FavoriteBorderIcon/> </Link>
             </div>
             <div className='m-5 navlinks icon'>
             

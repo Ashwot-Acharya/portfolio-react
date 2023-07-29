@@ -3,7 +3,7 @@ import { proxy, useSnapshot } from 'valtio'
 
 import Masonry from 'react-masonry-css'
 import Navbar from './Navbar';
-
+import { useSelector } from 'react-redux';
 
 const state = proxy({
   clicked: null,
@@ -23,8 +23,8 @@ function Mygallery() {
     500:1
 }
   const {urls} = useSnapshot(state)
-
-  
+  const theme =  useSelector((state)=>state.page.mode)
+  const hclass =  "image_gallery-" +theme
 
   return (
     <div>
@@ -39,11 +39,11 @@ function Mygallery() {
   className="my-masonry-grid"
   columnClassName="my-masonry-grid_column ">
                     {urls.map((el) => (
-            <img  className='mb-3 image_gallery '
+            <img  className={`mb-3  ${hclass}` }
           key={el}
             src={el}
           />
-        ))}
+        ))} 
                 </Masonry>
       </div>
     </div>

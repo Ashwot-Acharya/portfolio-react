@@ -86,6 +86,15 @@
   padding-left: 20%;
 
 }
+.p_left-30{
+  padding-left: 30%;
+}
+.p_left-40{
+  padding-left: 40%;
+}
+.p_left-50{
+  padding-left: 50%;
+}
 .vi-ew{
 display: none;
 }
@@ -284,12 +293,29 @@ a:hover{
   padding-left: 15px; /* gutter size */
   background-clip: padding-box;
 }
-.image_gallery{
+.image_gallery-dark .image_gallery-light{
   transition: 0.5s;
   border-radius: 10px;
 }
-.image_gallery:hover{
-
+.image_gallery-dark:hover {
+  transform: scale(1.02);
   box-shadow: 0 0 20px #ffffff;
+ 
+
+}
+.image_gallery-light:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #000000;
+ 
+
 }
 
+.inp-dark{
+  background-color: rgb(47, 47, 47);
+
+}
+
+.inp-light{
+  background-color: antiquewhite;
+
+}

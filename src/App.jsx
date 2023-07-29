@@ -5,7 +5,7 @@ import Blogs from './components/Blogs'
 import Projects from './components/Projects'
 import Demo from './components/Demo'
 import Mygallery from './components/Mygallery'
-
+import Contactme from './components/Contactme'
 function App() {
 
   return (
@@ -19,6 +19,7 @@ function App() {
         <Route path='/projects' element={<Projects/>} />
         <Route path='/demos' element={<Demo/>} />
         <Route path='/gallery' element={<Mygallery/>} />
+        <Route path='/contactme' element={<Contactme/>} />
       </Routes>
     </BrowserRouter>
     </div>
