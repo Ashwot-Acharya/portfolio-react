@@ -4,7 +4,7 @@ import MyParticles from "./MyParticles"
 import Skillicons from "./Skillicons"
   function Home() {
     const theme =  useSelector((state)=>state.page.mode)
-
+    const clname = "atag-"+theme
     
 
   return (
@@ -19,9 +19,11 @@ import Skillicons from "./Skillicons"
             <div className="">
             <div className="p-3 w-50">
               <div className="text" > 
-               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia corporis placeat quo totam consequuntur! Voluptatum, excepturi eos veritatis cupiditate accusantium maxime, officia esse sit maiores corporis at optio neque modi.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repudiandae omnis harum. Iste, facilis dolor minima mollitia at tempora. Maxime nostrum, quod iure asperiores omnis illo minus tempore tenetur libero.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio reprehenderit quisquam exercitationem eos a perspiciatis aliquid corporis debitis temporibus vitae, ratione quaerat nisi, at nulla impedit et placeat? Eveniet.
+               Hello there!!!!!!! , I am Ashwot Acharya, Currently a student and planning to major computer science and mathematics.  I am also someone who Loves to create websites and I am currently working on <a className={`${clname}`} href="https://github.com/Ashwot-Acharya/Zyte"> Zyte</a>. 
+               I also have other many ongoing projects like an <a className= {`${clname}`} href="#"> emailing API </a> system made using fastapi. I have taken part in many hackathon but recently with my friends won a track in <a className={ `${clname}`}> Deerhack 2023</a>
+              I am highly interested in machine learning and different Artifical Intellegence works. I also love the feild of cyber security. Things like zero-day vunerabilities and reverse engineering an application excites me. 
+              I am still learning and developing, and would love to grow in each feild possible. I am also interested in music and hiking and love roaming around. 
+
               </div>
                 <Skillicons/>   
               </div>

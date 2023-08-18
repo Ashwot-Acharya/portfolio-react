@@ -264,9 +264,7 @@ ul {
 .reduced-opacity{
   opacity: 0.7;
 }
-a:hover{
-  color: rgb(255, 27, 152);
-}
+
 .particles{
   z-index: -1;
 }
@@ -317,5 +315,24 @@ a:hover{
 
 .inp-light{
   background-color: antiquewhite;
+
+}
+
+.atag-dark{
+transition: 1s;
+color: blue;
+}
+.atag-dark:hover{
+color: 3498db;
+  font-weight:900;
+
+}
+.atag-light{
+  color: #2c21ce;
+}
+.atag-light:hover{
+  color:#3498db;
+  font-weight: 900;
+
 
 }
