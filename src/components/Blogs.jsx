@@ -27,16 +27,16 @@ function Blogs() {
                                 <b>Aerodynamics of a sphere </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/12/aerodynamics-of-sphere.html'> why the football curves mid-air -</a> <small> <i>December 07</i></small>
                             </li>
                             <li className='p-3'>
-                                <b>Django Framework </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/12/aerodynamics-of-sphere.html'> My first Look -</a> <small> <i>July 28</i></small>
+                                <b>Django Framework </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/07/django-framework-my-first-looks.html'> My first Look -</a> <small> <i>July 28</i></small>
                             </li>
                             <li className='p-3'>
-                                <b>National Socialmism</b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/12/aerodynamics-of-sphere.html'>Rise and fall of nazism philosopy - </a> <small> <i>April 03</i></small>
+                                <b>National Socialmism</b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/04/national-socialism.html'>Rise and fall of nazism philosopy - </a> <small> <i>April 03</i></small>
                             </li>
                             <li className='p-3'>
-                                <b> The deep web </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/12/aerodynamics-of-sphere.html'> Anynomyus Internet Usage - </a> <small> <i> April 01</i> </small>
+                                <b> The deep web </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/04/the-deep-web.html'> Anynomyus Internet Usage - </a> <small> <i> April 01</i> </small>
                             </li>
                             <li className='p-3'>
-                                <b> IOTEX</b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/12/aerodynamics-of-sphere.html'> internet of things on the blockchain - </a> <small> <i> 
+                                <b> IOTEX</b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/02/iotex.html'> internet of things on the blockchain - </a> <small> <i> 
 February 28</i> </small>
                             </li>
                         </ul>
@@ -47,7 +47,7 @@ February 28</i> </small>
 
                         <ul className={` p-3 ${blogpgstate}`}>
                             <li className='p-3'>
-                                <b> Music On Studying  </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2022/12/aerodynamics-of-sphere.html'> Your mind in music</a> <small> <i>Dec 07</i></small>
+                                <b> Music On Studying  </b>: <a target='_blank' className='und' href='https://thinkersproblem.blogspot.com/2021/12/effect-of-music-on-studying.html'> Your mind in music</a> <small> <i>Dec 07</i></small>
                             </li>
                             
                         </ul>
