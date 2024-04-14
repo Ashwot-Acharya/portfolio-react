@@ -18,35 +18,13 @@ function Skillicons() {
               <div className='expand p-3'>
               <FaPython/>
                 </div>
-                <div className='expand p-3'>
-                <SiPandas/>
-                </div> 
                   <div className='expand p-3'>
                   <SiTensorflow/> 
-                  </div>
-                  <div className='expand p-3'>
-                  <SiPhp/>
                   </div>
                   <div className='expand p-3'>
                  <SiMysql/>
                   </div> <div className='expand p-3'>
                   < FaLaravel/>
-                    </div>
-                    <div className='p-3 expand'> 
-
-                  
-                   <SiVite/> 
-                  </div> <div className='p-3 expand'>
-                  
-                   <SiSvelte/>
-                   </div>
-                   <div className='expand p-3'> 
-                   <SiFlutter/> </div>
-                    <div className='expand p-3'>
-                        <SiPytorch/>
-                    </div>
-                    <div className='p-3 expand'> 
-                    <BiLogoMongodb/>
                     </div>
               </div>
               

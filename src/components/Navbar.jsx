@@ -111,13 +111,11 @@ function Navbar() {
                     <li>
                         <Link to='/projects' className='' > Projects </Link>
                     </li>
+                    
                     <li>
-                        <Link to='/demos    ' className='' > Demo </Link>
+                        <Link to='https://github.com/Ashwot-Acharya/' > <GitHubIcon/> </Link>
                     </li>
-                    <li>
-                        <Link to='/' > <TwitterIcon/> </Link>
-                    </li>
-                    <li><a href=""><GitHubIcon/></a></li>
+                    <li><a href="/gallery">Gallery</a></li>
                     <li><a href=""><FavoriteBorderIcon/></a></li>
                     <li> 
                     <button className=' o7 light-mode '  onClick={changemode}>

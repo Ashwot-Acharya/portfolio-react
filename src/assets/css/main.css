@@ -110,6 +110,9 @@ display: none;
   .mobile-view{
     display: block;
   }
+  .desktop{
+    display: none;
+  }
   .und{
     display: none;
 
@@ -320,7 +323,7 @@ ul {
 
 .atag-dark{
 transition: 1s;
-color: blue;
+color: rgb(249, 249, 255);
 }
 .atag-dark:hover{
 color: 3498db;
@@ -328,11 +331,17 @@ color: 3498db;
 
 }
 .atag-light{
-  color: #2c21ce;
+  color: #000000;
 }
 .atag-light:hover{
   color:#3498db;
   font-weight: 900;
 
 
+} 
+.atag-dark{
+  font-weight: 900;
+}
+.atag-light{
+  font-weight: 900;
 }
