@@ -12,7 +12,7 @@ function Contactme() {
         <Navbar/>
         <MyParticles/>
             <div className='m-5  p-1r p_left-30'>
-            {/* <form action="https://formkeep.com/f/189a664a185d"
+            <form action="https://formkeep.com/f/189a664a185d"
                 accept-charset="UTF-8"
                 enctype="multipart/form-data"
                 method="POST">
@@ -29,8 +29,7 @@ function Contactme() {
                 <div className='p-3'>
                     <button type='Submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' >  Submit </button>
                 </div>
-            </form> */}
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc998Vv-r4CjZcv0Gb4BY0p1zfel7_ina2UIkj_EtLvfiVqXQ/viewform?embedded=true" width="640" height="721" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </form>
 
             </div>
 
