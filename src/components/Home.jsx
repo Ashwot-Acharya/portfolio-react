@@ -12,8 +12,7 @@ import Skillicons from "./Skillicons"
       <Navbar/>
     <div className="desktop">
     <MyParticles/>
-    </div>
-    
+        
     <div className={`m-5  p-1r p_left-20  ${theme}`}>
            <div>
          
@@ -36,6 +35,8 @@ import Skillicons from "./Skillicons"
           
            </div>
       </div>
+    </div>
+
 
 
       <div className="mobile-view">
