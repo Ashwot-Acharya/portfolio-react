@@ -31,11 +31,11 @@
 .mobile-view{
   display: none;
 }
-
-.und{
+/* highlight */
+.und_light{
     position: relative;
     display: block;
-    color: rgb(89, 89, 92);
+    color: rgb(15, 15, 16);
     padding: 4px 0;
     font-family: "Open Sans", sans-serif;
     text-decoration: none;
@@ -52,36 +52,84 @@
     text-transform: uppercase;
    
   }
-.und::after {
+.und_light::after {
     position: absolute;
     content: "";
     top: 100%;
     left: 0;
     width: 100%;
     height: 3px;
-    background: #3498db;
+    background: #141515;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.5s;
   }
-.und:hover {
-    color: #95a5a6;
+.und_light:hover {
+    color: #5a1880;
   }
-.und:hover::after {
+.und_light:hover::after {
     transform: scaleX(1.1);
     transform-origin: left;
   }
+
+.und_dark{
+    position: relative;
+    display: block;
+    color: rgb(178, 178, 182);
+    padding: 4px 0;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  .und-logo{
+    position: relative;
+    display: block;
+    color: rgb(27, 28, 29);
+    padding: 4px 0;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+   
+  }
+.und_dark::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #f9fbfc;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+.und_dark:hover {
+    color: #d3e1e2;
+  }
+.und_dark:hover::after {
+    transform: scaleX(1.1);
+    transform-origin: left;
+  }
+
+/* end of highlight */
   .w-50{ 
     width: 50%;
   }
   .w-40{ 
-    width: 50%;
+    width: 40%;
   }
-
+ 
   .mb-3{
     margin-bottom: 20px;
   }
+.p_left-5{
+  padding-left: 5%;
+}
+.p_left-10{
+  padding-left: 10%;
 
+}
 .p_left-20{
   padding-left: 20%;
 
