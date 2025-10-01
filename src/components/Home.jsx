@@ -14,7 +14,7 @@ import Skillicons from "./Skillicons"
     <MyParticles/>
         
     <div className={`m-5  p-1r p_left-20  ${theme}`}>
-           <div>GitHubIcon
+           <div>
          
             <h1 className="text-5xl p-3"> Ashwot Acharya </h1>
             <div className="">

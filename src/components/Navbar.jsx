@@ -2,10 +2,9 @@ import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';  
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import TwitterIcon from '@mui/icons-material/Twitter';  
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
 import { useSelector } from 'react-redux'; 
 import { useState } from 'react';
@@ -20,7 +19,7 @@ function Navbar() {
     const [pagemode , setpagemode] = useState(true)
     const myPagetheme = localStorage.getItem('pagetheme')
     const dispatch = useDispatch()
-
+    const und = "und_"+theme
     useEffect(() => {
         document.body.className = theme;
         if (myPagetheme ==  "light"){
@@ -64,18 +63,18 @@ function Navbar() {
   return (
     <div className={`navbar-style-basic ${theme}`} > 
         <div>
-            <h3 className='und text-3xl logo'> <Link to="/"> AA </Link></h3>
+           <div className={und}> <h3 className='und text-3xl logo'> <Link to="/"> AA </Link></h3></div> 
         </div>
         <div className='flex navlinks'>
             <div className='m-5  nav-links'>
-                <Link to='/projects' className='und o7'>projects</Link>  </div>
+                <Link to='/projects' className='und o7'>Projects</Link>  </div>
             <div className='m-5 nav-links'>
-                <Link to="/blog" className='und o7'>Blogs</Link> </div>
+                <Link to="/papers" className='und o7'>Papers</Link> </div>
             <div className='m-5 nav-links'> <Link to="/gallery" className='und'>
                     Gallery
                 </Link> </div>
             <div className='m-5 nav-links icon' > 
-               <a href='https://twitter.com/ashwotacharya' target='__blank' className='und o7'> <TwitterIcon/> </a>
+               <a href='https://www.instagram.com/obsessed_pictures/' target='__blank' className='und o7'> <CameraAltIcon/> </a>
             </div>
             <div className='m-5 nav-links icon'>
                <a href="https://github.com/Ashwot-Acharya/" target='__blank' className='und o7'> <GitHubIcon/></a>
@@ -106,7 +105,7 @@ function Navbar() {
                 </div>
                 <ul className={`menu-items  ${theme}`}>
                     <li>
-                        <Link to='/blog' className='' > Blogs </Link>
+                        <Link to='/papers' className='' > Papers </Link>
                     </li>
                     <li>
                         <Link to='/projects' className='' > Projects </Link>

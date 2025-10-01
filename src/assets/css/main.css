@@ -365,7 +365,7 @@ ul {
 }
 
 .inp-light{
-  background-color: antiquewhite;
+  background-color: rgb(196, 186, 172);
 
 }
 
@@ -374,10 +374,10 @@ transition: 1s;
 color: rgb(249, 249, 255);
 }
 .atag-dark:hover{
-color: 3498db;
+color:rgb(73, 245, 70);
   font-weight:900;
-
 }
+ 
 .atag-light{
   color: #000000;
 }
@@ -392,4 +392,7 @@ color: 3498db;
 }
 .atag-light{
   font-weight: 900;
+}
+.h-70{
+  height: 80% ;
 }

@@ -21,7 +21,7 @@ function App() {
         <Route path='/demos' element={<Demo/>} />
         <Route path='/gallery' element={<Mygallery/>} />
         <Route path='/contactme' element={<Contactme/>} />
-        <Route path='/research' element= {<Research/>} />
+        <Route path='/papers' element= {<Research/>} />
       </Routes>
     </BrowserRouter>
     </div>
