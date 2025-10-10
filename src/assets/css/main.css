@@ -31,11 +31,11 @@
 .mobile-view{
   display: none;
 }
-
-.und{
+/* highlight */
+.und_light{
     position: relative;
     display: block;
-    color: rgb(89, 89, 92);
+    color: rgb(0, 0, 0);
     padding: 4px 0;
     font-family: "Open Sans", sans-serif;
     text-decoration: none;
@@ -52,36 +52,84 @@
     text-transform: uppercase;
    
   }
-.und::after {
+.und_light::after {
     position: absolute;
     content: "";
     top: 100%;
     left: 0;
     width: 100%;
     height: 3px;
-    background: #3498db;
+    background: #141515;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.5s;
   }
-.und:hover {
-    color: #95a5a6;
+.und_light:hover {
+    color: #5a1880;
   }
-.und:hover::after {
+.und_light:hover::after {
     transform: scaleX(1.1);
     transform-origin: left;
   }
+
+.und_dark{
+    position: relative;
+    display: block;
+    color: rgb(247, 247, 249);
+    padding: 4px 0;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  .und-logo{
+    position: relative;
+    display: block;
+    color: rgb(27, 28, 29);
+    padding: 4px 0;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+   
+  }
+.und_dark::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #f9fbfc;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+.und_dark:hover {
+    color: #ffffff;
+  }
+.und_dark:hover::after {
+    transform: scaleX(1.1);
+    transform-origin: left;
+  }
+
+/* end of highlight */
   .w-50{ 
     width: 50%;
   }
   .w-40{ 
-    width: 50%;
+    width: 40%;
   }
-
+ 
   .mb-3{
     margin-bottom: 20px;
   }
+.p_left-5{
+  padding-left: 5%;
+}
+.p_left-10{
+  padding-left: 10%;
 
+}
 .p_left-20{
   padding-left: 20%;
 
@@ -107,16 +155,16 @@ display: none;
 }
 
 @media only screen and (max-width: 780px) {
+  .navlinks {
+    display: none !important;
+  }
   .mobile-view{
     display: block;
   }
-  .desktop{
-    display: none;
-  }
-  .und{
-    display: none;
+.desktop{
+  display: none;
+}
 
-  }
   .logo{
     display: block;
   }
@@ -145,7 +193,7 @@ display: none;
                     width: 30px;
                     top: 20px;
                     right: 20px;
-                    z-index: 5;
+                    z-index:1100;
                     opacity: 0;
                     cursor: pointer;
                 }
@@ -160,7 +208,7 @@ display: none;
                     position: absolute;
                     top: 20px;
                     right: 20px;
-                    z-index: 2;
+                    z-index: 1050;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -174,51 +222,75 @@ display: none;
                     height: 4px;
                     width: 100%;
                     border-radius: 10px;
-                    background: #fff;
+                    
                 }
 
                 /* Step 3 : Hamburger Each Line1 , Line2 & Line3  Styling  */
 
                 .navbar-container .hamburger-lines .line1 {
                     transform-origin: 0% 0%;
+                    background:#3498db;
                     transition: transform 0.3s ease-in-out;
                 }
 
                 .navbar-container .hamburger-lines .line2 {
+                    background:#3498db;
+
                     transition: transform 0.1s ease-in-out;
                 }
 
                 .navbar-container .hamburger-lines .line3 {
-                    transform-origin: 0% 100%;
+                    background:#3498db;
+
+                  transform-origin: 0% 100%;
                     transition: transform 0.3s ease-in-out;
                 }
 
                 /* Step 4 : Styling Menu-List Vertical */
-                .navbar .menu-items {
-                  position: relative;
-                  left: 80%;
-                  padding-top: 80px;
-                
-                  height: 100vh;
-                  max-width: 300px;
-                  transform: translate(200%);
-                  display: flex;
-                  flex-direction: column;
-                  margin-left: -70px;
-                  padding-right: 40px;
-                  transition: transform 0.5s ease-in-out;
-                  overflow: scroll;
-                  }
+               .navbar .menu-items {
+                position: fixed;
+                top: 0;
+                right: -300px; /* move it off-screen */
+                width: 250px;
+                height: 100vh;
+                background-color: inherit;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding-top: 5rem;
+                padding-left: 2rem;
+                transition: right 0.4s ease-in-out;
+                z-index: 1000;
+                overflow-y: auto;
+                opacity: 0;
+                pointer-events: none;
+                }
                 .menu-items{
                   padding: 10px;
                   
                 }
+                .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+                  right: 0;
+                  opacity: 1;
+                  pointer-events: auto;
+                }
+
 
                 /* styling links : For Mobile View */
                 .navbar .menu-items li {
                     margin-bottom: 1.8rem;
                 }
 
+                .navbar .menu-items.light {
+                  background-color: rgba(255, 255, 255, 0.95); /* light mode */
+                  color: #000;
+                }
+                
+                .navbar .menu-items.dark {
+                  background-color: rgba(0, 0, 0, 0.95); /* dark mode */
+                  color: #fff;
+                }
 
 
                 /* Step 5 : Styling for :checked Value */
@@ -238,7 +310,6 @@ display: none;
                     transform: rotate(-45deg);
                 }
 
-                /* End Of Hamburger Styling */
 
 }
 .swiper {
@@ -317,7 +388,7 @@ ul {
 }
 
 .inp-light{
-  background-color: antiquewhite;
+  background-color: rgb(196, 186, 172);
 
 }
 
@@ -326,10 +397,10 @@ transition: 1s;
 color: rgb(249, 249, 255);
 }
 .atag-dark:hover{
-color: 3498db;
+color:rgb(73, 245, 70);
   font-weight:900;
-
 }
+ 
 .atag-light{
   color: #000000;
 }
@@ -344,4 +415,108 @@ color: 3498db;
 }
 .atag-light{
   font-weight: 900;
+}
+.h-70{
+  height: 80% ;
+}
+.projects-container {
+  padding: 1rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-icon {
+  flex-shrink: 0;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* === MOBILE VIEW === */
+@media only screen and (max-width: 780px) {
+  .projects-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-icon {
+    font-size: 2rem;
+    margin-right: 0;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+  }
+}
+/* === Research Page Styling === */
+
+.research-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.research-page .border-gray-700 {
+  border-color: rgba(100, 100, 100, 0.4);
+}
+
+@media only screen and (max-width: 1024px) {
+  .research-page {
+    padding-bottom: 2rem;
+  }
+
+  .research-page .text-5xl {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .research-page .p_left-10 {
+    padding-left: 0;
+  }
+
+  .research-page .space-y-6 > * + * {
+    margin-top: 1rem;
+  }
+
+  .research-page a {
+    word-wrap: break-word;
+  }
 }
