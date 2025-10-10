@@ -1,110 +1,94 @@
 import React from 'react'
 import Navbar from './Navbar'
-import MyParticles from './MyParticles';
-import { Tilt } from 'react-tilt'
-import {FaRobot , FaCopyright , FaNewspaper , FaSchool  } from "react-icons/fa";
-import { Link } from 'react-router-dom';
-import {TbSocial , TbNotes} from 'react-icons/tb'
-import {MdPayment} from 'react-icons/md'
+import MyParticles from './MyParticles'
+import { Link } from 'react-router-dom'
+import {
+  FaPenFancy, FaCopyright, FaNewspaper, FaLink
+} from "react-icons/fa"
+import { TbSocial, TbNotes } from 'react-icons/tb'
+import { MdPayment, MdHealthAndSafety } from 'react-icons/md'
 
 function Projects() {
-  
-   
+  const projects = [
+    {
+      icon: <MdPayment />,
+      title: "Merchant Plus",
+      desc: "Blockchain based payment system",
+      link: "https://github.com/apurbadh/MerchantPlus"
+    },
+    {
+      icon: <FaNewspaper />,
+      title: "Portfolio Website",
+      desc: "This very portfolio website",
+      link: "https://github.com/Ashwot-Acharya/portfolio-react"
+    },
+    {
+      icon: <TbNotes />,
+      title: "Good Notes",
+      desc: "A Google Docs clone made using MERN stack",
+      link: "https://github.com/Ashwot-Acharya/GoodNotes"
+    },
+    {
+      icon: <FaCopyright />,
+      title: "Cognition",
+      desc: "A machine learning tool designed to lower copyright issues",
+      link: "/allure",
+      internal: true
+    },
+    {
+      icon: <TbSocial />,
+      title: "Allure",
+      desc: "A Laravel-based social media app for sharing media",
+      link: "https://github.com/Ashwot-Acharya/allure"
+    },
+    {
+      icon: <FaLink />,
+      title: "Refine It",
+      desc: "Automatic referencing tool",
+      link: "https://github.com/Ashwot-Acharya/refine-it"
+    },
+    {
+      icon: <FaPenFancy />,
+      title: "Co-write Me",
+      desc: "Quick one-day project using LLMs and APIs — made for fun",
+      link: "https://github.com/Ashwot-Acharya/co-write.me"
+    },
+    {
+      icon: <MdHealthAndSafety />,
+      title: "Osiris",
+      desc: "Find doctors based on provided symptoms",
+      link: "https://github.com/apurbadh/Osiris"
+    }
+  ]
 
   return (
-  <div>
-    <Navbar/>
-    <MyParticles/>  
-    <div className='m-5  p-1r p_left-30'>
-    <h1 className="text-5xl p-3 "> Projects </h1>
-    <div className='p-3'>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <TbSocial className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''> Allure</b>
-        </div>
-        <p className='p-3 text-xs und'> A laravel based social media application to share music, videos and pictures </p>
-        
-      </div>
-      </Link>
-    </div>
-    <div className='p-3'>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <FaRobot className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''> Tweetbot</b>
-        </div>
-        <p className='p-3 text-xs und'> A simple twitter bot that tweets jokes made from tweepy</p>
-        
-      </div>
-      </Link>
-    </div>
-    <div className='p-3'>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <MdPayment className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''> Mearchant Plus</b>
-        </div>
-        <p className='p-3 text-xs und'> Blockchain based payment system</p>
-        
-      </div>
-      </Link>
-    </div>
-    <div className='p-3 '>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <TbNotes className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''> Good Notes</b>
-        </div>
-        <p className='p-3 text-xs und'> A google docs clone made using Mern stack </p>
-        
-      </div>
-      </Link>
-    </div>
-    <div className='p-3'>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <FaCopyright className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''> Cognition</b>
-        </div>
-        <p className='p-3 text-xs und'> A machine learning tool design to lower copyright issue </p>
-        
-      </div>
-      </Link>
-    </div>
-    <div className='p-3'>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <FaNewspaper className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''>Coeus </b>
-        </div>
-        <p className='p-3 text-xs und'> A news scrapper and magement tool</p>
-        
-      </div>
-      </Link>
-    </div>
-    <div className='p-3'>
-    <Link to={'/allure'}>
-      <div className='flex '> 
-        <FaSchool className='text-5xl' /> 
-        <div className='font-bold p-3 '>
-          <b className=''>Minerva</b>
-        </div>
-        <p className='p-3 text-xs und'> A news scrapper and magement tool</p>
-        
-      </div>
-      </Link>
-    </div>
-    </div> 
-    
+    <div>
+      <Navbar />
+      <MyParticles />
+      <div className="projects-container p_left-10">
+        <h1 className="text-5xl p-3">Projects</h1>
 
-  </div>      
+        {projects.map((proj, i) => (
+          proj.internal ? (
+            <Link to={proj.link} key={i} className="project-item und">
+              <div className="project-icon">{proj.icon}</div>
+              <div className="project-text">
+                <span className="project-title">{proj.title}</span>
+                <span className="project-desc">{proj.desc}</span>
+              </div>
+            </Link>
+          ) : (
+            <a href={proj.link} target="_blank" rel="noopener noreferrer" key={i} className="project-item und">
+              <div className="project-icon">{proj.icon}</div>
+              <div className="project-text">
+                <span className="project-title">{proj.title}</span>
+                <span className="project-desc">{proj.desc}</span>
+              </div>
+            </a>
+          )
+        ))}
+      </div>
+    </div>
   )
 }
 
