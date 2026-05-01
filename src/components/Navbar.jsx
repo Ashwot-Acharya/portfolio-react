@@ -6,7 +6,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
-import { useSelector } from 'react-redux'; 
+import { useSelector } from 'react-redux';  
 import { useState } from 'react';
 import { switchmode } from '../state/pageslice';
 import { useDispatch } from 'react-redux';
@@ -45,7 +45,6 @@ useEffect(() => {
 
   if (!checkbox || !menu) return;
 
-  // Initially hide menu
   menu.style.display = 'none';
 
   const handleChange = () => {

@@ -7,6 +7,7 @@ import Demo from './components/Demo'
 import Mygallery from './components/Mygallery'
 import Contactme from './components/Contactme'
 import Research from './components/Research'
+import Loadtest from './components/loadtest'
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/gallery' element={<Mygallery/>} />
         <Route path='/contactme' element={<Contactme/>} />
         <Route path='/papers' element= {<Research/>} />
+        <Route path='/test/:slug' element ={<Loadtest/>} />
       </Routes>
     </BrowserRouter>
     </div>
