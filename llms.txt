@@ -1,0 +1,64 @@
+# Ashwot Acharya
+**CS & Mathematics @ Kathmandu University**  
+Kathmandu, Nepal  
+Email: ashwotacharya@gmail.com
+
+I build things to understand them — from scratch, in code.
+
+## Stack
+- **Languages:** Python, Rust, C, Lua
+- **Math/ML:** NumPy, linear algebra, formal language theory, complex analysis
+- **Systems:** Linux kernel, evdev/uinput, USB HID, Proton/Steam
+- **Tools:** Git, Ollama, Neovim
+
+## Projects
+1. **Multi-Agent-IDS**  
+   Five-agent AI intrusion detection system for banking networks — TLS/JA3 fingerprinting, BiLSTM behavior modeling, and Isolation Forests fused into a single Composite Risk Score, mapped to Nepal Rastra Bank's cybersecurity framework.  
+   Repo: https://github.com/Ashwot-Acharya/Multi-Agent-IDS
+
+2. **SysSec**  
+   A kernel-level intrusion detection system that learns an application's normal Linux syscall 'grammar' via a Probabilistic Context-Free Grammar model, catching zero-days and reverse shells that signature-based tools miss.  
+   Repo: https://github.com/Ashwot-Acharya/SysSec
+
+3. **MendelySync-Suit**  
+   A browser extension, local SQLite-backed server, and React Native app that sync your Mendeley reference library locally for offline, on-the-go research.  
+   Repo: https://github.com/Ashwot-Acharya/MendelySync-Suit
+
+4. **SnapseX**  
+   A bioinformatics platform that detects and classifies HTT gene CAG repeat expansions (via a custom CFG parser) to predict Huntington's disease risk, onset age, and drug binding interactions, with pedigree simulation and ESMFold-based protein accessibility scoring.  
+   Repo: https://github.com/Ashwot-Acharya/SnapseX
+
+5. **Monte-carlo-Simulator**  
+   A research-grade Markov Chain Monte Carlo simulator implementing Metropolis-Hastings with adaptive step sizing, R-hat and effective-sample-size diagnostics, and benchmark distributions like the Rosenbrock banana and Neal's funnel.  
+   Repo: https://github.com/Ashwot-Acharya/Monte-carlo-Simulator
+
+6. **Sudoku_SAT**  
+   Reduces generalized n²×n² Sudoku to Boolean Satisfiability — CNF encoding solved with a custom CDCL solver, benchmarked against classical backtracking.  
+   Repo: https://github.com/Ashwot-Acharya/Sudoku_SAT
+
+## Research Papers
+1. **SAT Based Approach To Solving Sudoku**  
+   Authors: Ashwot Acharya, Bishesh Bohora, Supreme Chaudhary, Lakki Thapa  
+   Abstract: A SAT-based approach to solving generalized Sudoku by reducing the puzzle to a propositional formula in CNF, encoding the structural constraints into Boolean variables, and solving the DIMACS instances with a CDCL solver implemented in C alongside standard SAT solvers.  
+   PDF: /pdf/SAT.pdf  
+   Keywords: SAT, Sudoku, NP-complete, CNF, CDCL, DIMACS
+
+2. **Working Principles of Proof Assistants and Formalization of some proofs in Agda**  
+   Authors: Ashwot Acharya, Bishesh Bohora, Supreme Chaudhary  
+   Abstract: An exploration of the internal machinery of proof assistants — type theory, dependent types, and the Curry-Howard correspondence — alongside concrete formalizations of classical proofs carried out in the Agda proof assistant.  
+   PDF: /pdf/agda_project.pdf  
+   Keywords: Agda, formal verification, type theory, proof assistants
+
+3. **The effects of Information Communication on the Economy of a Country Focusing on Nepal**  
+   Authors: Ashwot Acharya  
+   Abstract: An analysis of how information and communication technologies (ICT) influence national economic development, with an applied case study focused on Nepal's telecommunications infrastructure, digital adoption, and resulting macroeconomic effects.  
+   PDF: /pdf/ICT_economics.pdf  
+   Keywords: ICT, economics, Nepal, development
+
+## Social
+- GitHub: https://github.com/Ashwot-Acharya
+- LinkedIn: https://linkedin.com/in/ashwot-acharya
+- Twitter/X: https://x.com/ashwotacharya
+
+## Research Interests
+Formal methods, type theory, SAT solving, computational learning theory, kernel-level security, and the intersection of mathematics and computer science.
