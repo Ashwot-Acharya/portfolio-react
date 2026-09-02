@@ -1,97 +1,109 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import { useSelector } from "react-redux";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { FaArrowDown, FaTimes } from "react-icons/fa";
+import { papers } from "../data/papers";
 
 function Research() {
-  const theme = useSelector((state) => state.page.mode);
-  const undline = "und_" + theme;
-  const aclas = "atag-" + theme;
-
   const [selectedPdf, setSelectedPdf] = useState(null);
 
-  const papers = [
-    {
-      title:
-        "Working Principles of Proof Assistants and Formalization of some proofs in Agda",
-      authors: "Ashwot Acharya, Bishesh Bohora, Supreme Chaudhary",
-      pdf: "/pdf/agda_project.pdf",
-      reviewed: false,
-    },
-    {
-      title:
-        "The effects of Information Communication on the Economy of a Country Focusing on Nepal",
-      authors: "Ashwot Acharya",
-      pdf: "/pdf/ICT_economics.pdf",
-      reviewed: false,
-    },
-  ];
+  const openViewer = (pdfPath) => setSelectedPdf(pdfPath);
+  const closeViewer = () => setSelectedPdf(null);
 
-  const isMobile = () => window.innerWidth < 1024;
-
-  const handleTitleClick = (pdfPath) => {
-    if (isMobile()) {
-      window.open(pdfPath, "_blank");
-    } else {
-      setSelectedPdf(pdfPath);
-    }
+  const statusLabel = (status) => {
+    return status === "peer-reviewed" ? "Peer reviewed" : "Preprint";
   };
 
+  const selectedPaper = papers.find(p => p.pdf === selectedPdf);
+
   return (
-    <div className={`research-page ${theme}`}>
+    <div className="research-page">
       <Navbar />
 
-      <div className="text-5xl font-bold p_left-10 py-5">Papers</div>
+      <main className="research-header">
+        <div className="research-terminal">
+          <span className="t-user">ashwot@portfolio</span>
+          <span className="t-colon">:</span>
+          <span className="t-path">~/papers</span>
+          <span className="t-dollar">$ </span>
+          <span className="t-cmd">ls -la</span>
+        </div>
+        <h1 className="research-title">
+          <span className="t-purple">/</span>Papers
+        </h1>
+      </main>
 
-      {/* Main Layout */}
-      <div className="flex flex-col lg:flex-row h-[calc(100vh-6rem)]">
-        
-        {/* === Left Column: Paper List === */}
-        <div className="w-full lg:w-1/3 p-6 space-y-6 border-b lg:border-r border-gray-700 overflow-y-auto">
-          {papers.map((paper, index) => (
-            <div
-              key={index}
-              onClick={() => handleTitleClick(paper.pdf)}
-              className={`cursor-pointer rounded-xl p-4 transition duration-300 hover:scale-[1.01] ${
-                theme === "dark"
-                  ? "hover:bg-[rgba(255,255,255,0.08)]"
-                  : "hover:bg-[rgba(0,0,0,0.05)]"
-              }`}
-            >
-              <div className={`text-lg font-semibold leading-snug ${undline}`}>
-                {paper.title}
-              </div>
-              <div className="text-sm opacity-80 mt-1">{paper.authors}</div>
-
-              <a
-                href={paper.pdf}
-                className={`${aclas} text-sm flex items-center gap-1 mt-2`}
-                download
+      <div className={`research-layout ${selectedPdf ? "has-viewer" : ""}`}>
+        <section className="paper-list" aria-label="List of research papers">
+          {papers.map((paper, index) => {
+            const isSelected = selectedPdf === paper.pdf;
+            return (
+              <article
+                key={index}
+                onClick={() => openViewer(paper.pdf)}
+                className={`paper-card ${isSelected ? "selected" : ""}`}
               >
-                Download <ArrowDownwardIcon fontSize="small" />
-              </a>
+                <div className="paper-term-header">
+                  <span className="paper-term-dot red"></span>
+                  <span className="paper-term-dot yellow"></span>
+                  <span className="paper-term-dot green"></span>
+                  <span className="paper-term-path">~/papers/{paper.pdf.split('/').pop()}</span>
+                </div>
+                <div className="paper-body">
+                <h2 className="paper-title">
+                  <span className="acc">$ </span>{paper.title}
+                </h2>
+                <p className="paper-description">{paper.description}</p>
+                <div className="paper-authors">{paper.authors.join(', ')}</div>
+                <div className="paper-keywords">
+                  {paper.keywords.map(kw => (
+                    <span key={kw} className="paper-keyword">#{kw}</span>
+                  ))}
+                </div>
+                <div className="paper-status">
+                  Status: {statusLabel(paper.status)} • {paper.venue}
+                </div>
 
-              <div className="text-xs mt-1 opacity-60">
-                {paper.reviewed ? "Peer reviewed" : "Not peer reviewed*"}
+                <a
+                  href={paper.pdf}
+                  className="paper-download"
+                  download
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  [Download] <FaArrowDown size={12} />
+                </a>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+
+        <section className="paper-preview" aria-label="PDF preview" aria-live="polite">
+          {selectedPdf && selectedPaper ? (
+            <div className="paper-viewer">
+              <div className="paper-viewer-bar">
+                <span className="dot red"></span>
+                <span className="dot yellow"></span>
+                <span className="dot green"></span>
+                <span className="paper-viewer-title">viewer {selectedPaper.pdf}</span>
+                <button type="button" onClick={closeViewer} aria-label="Close PDF viewer" className="paper-close-btn">
+                  <FaTimes size={12} /> close
+                </button>
               </div>
-            </div>
-          ))}
-        </div>
 
-        {/* === Right Column: PDF Viewer (desktop only) === */}
-        <div className="hidden lg:flex flex-1 p-4">
-          {selectedPdf ? (
-            <embed
-              src={selectedPdf}
-              type="application/pdf"
-              className="w-full h-full rounded-lg shadow-lg"
-            />
-          ) : (
-            <div className="flex items-center justify-center h-full text-gray-500 italic">
-              Select a paper to view
+              <iframe
+                src={selectedPdf}
+                title={`PDF preview of ${selectedPaper.title}`}
+                className="paper-viewer-frame"
+              />
+
+              <a href={selectedPdf} download className="paper-viewer-download">
+                [Download] <FaArrowDown size={12} />
+              </a>
             </div>
+          ) : (
+            <div className="paper-viewer-placeholder"></div>
           )}
-        </div>
+        </section>
       </div>
     </div>
   );

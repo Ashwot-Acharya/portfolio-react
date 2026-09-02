@@ -1,141 +1,91 @@
 import React from 'react';
 import Navbar from './Navbar';
-import MyParticles from './MyParticles';
-import { useSelector } from 'react-redux';
-import { useForm, ValidationError } from '@formspree/react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 
-function Contactme() {
-  const theme = useSelector((state) => state.page.mode);
-  const field_theme = "inp-" + theme;
-  const und = "und_" + theme;
-  const [state, handleSubmit] = useForm("xldpjkdw");
-
-  if (state.succeeded) {
-    return (
-      <div className="h-screen flex flex-col items-center justify-center text-2xl">
-        <p>✅ Thanks for reaching out! I’ll get back to you soon.</p>
-      </div>
-    );
+const socials = [
+  {
+    href: "mailto:ashwotacharya@gmail.com",
+    external: false,
+    icon: <FaEnvelope />,
+    name: "Email",
+    detail: "ashwotacharya@gmail.com"
+  },
+  {
+    href: "https://github.com/Ashwot-Acharya",
+    external: true,
+    icon: <FaGithub />,
+    name: "GitHub",
+    detail: "@Ashwot-Acharya"
+  },
+  {
+    href: "https://linkedin.com/in/ashwot-acharya",
+    external: true,
+    icon: <FaLinkedin />,
+    name: "LinkedIn",
+    detail: "ashwot-acharya"
+  },
+  {
+    href: "https://x.com/ashwotacharya",
+    external: true,
+    icon: <FaTwitter />,
+    name: "Twitter/X",
+    detail: "@ashwotacharya"
   }
+];
 
+function Contactme() {
   return (
-    <div>
+    <div className="page-shell">
       <Navbar />
-      <MyParticles />
-      <div className="min-h-screen flex flex-col md:flex-row justify-center items-start p-10 gap-10">
-        {/* LEFT SIDE — Contact Form */}
-        <div className="flex-1 bg-opacity-30 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-300">
-          <div className={`text-3xl mb-4 font-semibold`}>Let's Connect!</div>
+      <main className="contact-main">
+        <div className="contact-card">
+          {/* Terminal Window Bar */}
+          <div className="contact-terminal-bar">
+            <span className="contact-dot red"></span>
+            <span className="contact-dot yellow"></span>
+            <span className="contact-dot green"></span>
+            <span className="contact-terminal-path">ashwot@portfolio: ~/contact.sh</span>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                className={`w-full p-3 rounded-xl border focus:outline-none ${field_theme}`}
-                required
-              />
-            </div>
+          <div className="contact-prompt-line">
+            <span className="c-user">ashwot@portfolio</span>
+            <span className="c-colon">:~$ </span>
+            <span className="c-cmd">ls -l social/</span>
+          </div>
 
-            <div>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                className={`w-full p-3 rounded-xl border focus:outline-none ${field_theme}`}
-                required
-              />
-              <ValidationError prefix="Email" field="email" errors={state.errors} />
-            </div>
+          <h1 className="contact-title">
+            <span className="acc">/</span>Get in Touch
+          </h1>
 
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Type your message here..."
-                rows="5"
-                className={`w-full p-3 rounded-xl border focus:outline-none ${field_theme}`}
-                required
-              ></textarea>
-              <ValidationError prefix="Message" field="message" errors={state.errors} />
-            </div>
+          <p className="contact-subtitle">
+            # Reach out through any of my platforms below:
+          </p>
 
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition"
-            >
-              {state.submitting ? 'Sending...' : 'Submit'}
-            </button>
-          </form>
-        </div>
-
-        {/* RIGHT SIDE — Contact Options / Social Cards */}
-        <div className="flex-1 flex flex-col gap-6">
-          <div className="bg-opacity-30 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-300">
-            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <p className="text-gray-500 mb-4">
-              Feel free to reach out through any of my social platforms below.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a
-                href="mailto:ashwotacharya@gmail.com"
-                className="flex items-center gap-3 p-4 bg-white/20 hover:bg-white/40 rounded-xl transition"
-              >
-                <FaEnvelope className="text-2xl text-blue-500" />
-                <div>
-                  <div className="font-semibold">Email</div>
-                  <div className="text-sm text-gray-500">Send me a message</div>
-                </div>
-              </a>
-
-              <a
-                href="https://github.com/Ashwot-Acharya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 bg-white/20 hover:bg-white/40 rounded-xl transition"
-              >
-                <FaGithub className="text-2xl text-gray-700" />
-                <div>
-                  <div className="font-semibold">GitHub</div>
-                  <div className="text-sm text-gray-500">View my projects</div>
-                </div>
-              </a>
-
-              <a
-                href="https://linkedin.com/in/ashwot-acharya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 bg-white/20 hover:bg-white/40 rounded-xl transition"
-              >
-                <FaLinkedin className="text-2xl text-blue-700" />
-                <div>
-                  <div className="font-semibold">LinkedIn</div>
-                  <div className="text-sm text-gray-500">Connect professionally</div>
-                </div>
-              </a>
-
-              <a
-                href="https://x.com/ashwotacharya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 bg-white/20 hover:bg-white/40 rounded-xl transition"
-              >
-                <FaTwitter className="text-2xl text-sky-500" />
-                <div>
-                  <div className="font-semibold">Twitter</div>
-                  <div className="text-sm text-gray-500">Follow my thoughts</div>
-                </div>
-              </a>
-            </div>
+          <div className="contact-grid">
+            {socials.map((s, i) => {
+              const content = (
+                <>
+                  <span className="contact-social-icon">{s.icon}</span>
+                  <div>
+                    <div className="contact-social-name">{s.name}</div>
+                    <div className="contact-detail">{s.detail}</div>
+                  </div>
+                </>
+              );
+              return (
+                <a
+                  key={i}
+                  href={s.href}
+                  {...(s.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="contact-card-item"
+                >
+                  {content}
+                </a>
+              );
+            })}
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

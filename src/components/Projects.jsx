@@ -1,93 +1,65 @@
 import React from 'react'
 import Navbar from './Navbar'
-import MyParticles from './MyParticles'
-import { Link } from 'react-router-dom'
 import {
-  FaPenFancy, FaCopyright, FaNewspaper, FaLink
+  FaShieldAlt, FaSyncAlt, FaDna, FaChartLine, FaBug, FaThLarge
 } from "react-icons/fa"
-import { TbSocial, TbNotes } from 'react-icons/tb'
-import { MdPayment, MdHealthAndSafety } from 'react-icons/md'
+import { projects } from '../data/projects'
+
+const iconMap = {
+  shield: <FaShieldAlt />,
+  sync: <FaSyncAlt />,
+  dna: <FaDna />,
+  chart: <FaChartLine />,
+  bug: <FaBug />,
+  grid: <FaThLarge />,
+}
 
 function Projects() {
-  const projects = [
-    {
-      icon: <MdPayment />,
-      title: "Merchant Plus",
-      desc: "Blockchain based payment system",
-      link: "https://github.com/apurbadh/MerchantPlus"
-    },
-    {
-      icon: <FaNewspaper />,
-      title: "Portfolio Website",
-      desc: "This very portfolio website",
-      link: "https://github.com/Ashwot-Acharya/portfolio-react"
-    },
-    {
-      icon: <TbNotes />,
-      title: "Good Notes",
-      desc: "A Google Docs clone made using MERN stack",
-      link: "https://github.com/Ashwot-Acharya/GoodNotes"
-    },
-    {
-      icon: <FaCopyright />,
-      title: "Cognition",
-      desc: "A machine learning tool designed to lower copyright issues",
-      link: "/allure",
-      internal: true
-    },
-    {
-      icon: <TbSocial />,
-      title: "Allure",
-      desc: "A Laravel-based social media app for sharing media",
-      link: "https://github.com/Ashwot-Acharya/allure"
-    },
-    {
-      icon: <FaLink />,
-      title: "Refine It",
-      desc: "Automatic referencing tool",
-      link: "https://github.com/Ashwot-Acharya/refine-it"
-    },
-    {
-      icon: <FaPenFancy />,
-      title: "Co-write Me",
-      desc: "Quick one-day project using LLMs and APIs — made for fun",
-      link: "https://github.com/Ashwot-Acharya/co-write.me"
-    },
-    {
-      icon: <MdHealthAndSafety />,
-      title: "Osiris",
-      desc: "Find doctors based on provided symptoms",
-      link: "https://github.com/apurbadh/Osiris"
-    }
-  ]
-
   return (
-    <div>
+    <div className="page-shell">
       <Navbar />
-      <MyParticles />
-      <div className="projects-container p_left-10">
-        <h1 className="text-5xl p-3">Projects</h1>
+      <main className="projects-main">
+        <div className="projects-terminal">
+          <span className="c-user">ashwot@portfolio</span>
+          <span className="c-colon">:</span>
+          <span className="c-path">~/projects</span>
+          <span className="c-dollar">$ </span>
+          <span className="c-cmd">ls --format=grid</span>
+        </div>
 
-        {projects.map((proj, i) => (
-          proj.internal ? (
-            <Link to={proj.link} key={i} className="project-item und">
-              <div className="project-icon">{proj.icon}</div>
-              <div className="project-text">
-                <span className="project-title">{proj.title}</span>
-                <span className="project-desc">{proj.desc}</span>
+        <h1 className="projects-title">
+          <span className="acc">/</span>Projects
+        </h1>
+
+        <div className="projects-grid">
+          {projects.map((proj, i) => (
+            <a
+              href={proj.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={i}
+              className="project-card"
+            >
+              <div className="project-card-header">
+                <span className="project-card-dot red"></span>
+                <span className="project-card-dot yellow"></span>
+                <span className="project-card-dot green"></span>
+                <span className="project-card-path">{proj.title.toLowerCase()}.sh</span>
               </div>
-            </Link>
-          ) : (
-            <a href={proj.link} target="_blank" rel="noopener noreferrer" key={i} className="project-item und">
-              <div className="project-icon">{proj.icon}</div>
-              <div className="project-text">
-                <span className="project-title">{proj.title}</span>
-                <span className="project-desc">{proj.desc}</span>
+              <div className="project-card-body">
+                <div className="project-card-title-row">
+                  <span className="project-card-icon">{iconMap[proj.icon] || iconMap.grid}</span>
+                  <h3 className="project-card-title">{proj.title}</h3>
+                </div>
+                <p className="project-card-desc">{proj.desc}</p>
+                <div className="project-card-footer">
+                  <span className="project-card-action">[ open repository &gt;&gt; ]</span>
+                </div>
               </div>
             </a>
-          )
-        ))}
-      </div>
+          ))}
+        </div>
+      </main>
     </div>
   )
 }
